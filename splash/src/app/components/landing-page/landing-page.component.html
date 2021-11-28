@@ -1,8 +1,6 @@
-<mat-grid-list cols="3" rowHeight="2:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>
-    <app-splash-form></app-splash-form>
-    <app-splash-card></app-splash-card>
-  </mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-</mat-grid-list>
+<app-splash-form></app-splash-form>
+<div *ngIf="splashes">
+  <div *ngFor="let splash of splashes">
+    <app-splash-card [item]="splash"></app-splash-card>
+  </div>
+</div>
