@@ -8,14 +8,26 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { SplashCardComponent } from './components/splash-card/splash-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { SplashFormComponent } from './components/splash-form/splash-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent],
+  declarations: [
+    AppComponent,
+    LandingPageComponent,
+    SplashCardComponent,
+    SplashFormComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatGridListModule,
+    MatCardModule,
+    ReactiveFormsModule,
     HttpClientModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
