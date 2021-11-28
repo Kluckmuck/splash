@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { SplashFormComponent } from './components/splash-form/splash-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NoopAnimationsModule,
     MatGridListModule,
     MatCardModule,
+    MatButtonModule,
+    MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
 

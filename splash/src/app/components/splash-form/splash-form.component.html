@@ -1,7 +1,23 @@
-<form [formGroup]="profileForm">
-  <label for="first-name">First Name: </label>
-  <input id="first-name" type="text" formControlName="firstName" />
+<form [formGroup]="splashForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label for="title">Title </mat-label>
+    <input
+      matInput
+      id="title"
+      type="text"
+      name="title"
+      formControlName="title"
+    />
+  </mat-form-field>
 
-  <label for="last-name">Last Name: </label>
-  <input id="last-name" type="text" formControlName="lastName" />
+  <mat-form-field appearance="fill">
+    <mat-label for="body">Body </mat-label>
+    <input matInput id="body" type="text" name="body" formControlName="body" />
+  </mat-form-field>
+
+  <p>
+    <button mat-button type="submit" disabled="{{ !splashForm.valid }}">
+      Submit
+    </button>
+  </p>
 </form>

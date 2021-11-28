@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-splash-form',
@@ -9,10 +9,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class SplashFormComponent implements OnInit {
   constructor() {}
 
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+  splashForm = new FormGroup({
+    title: new FormControl('', Validators.required),
+    body: new FormControl('', Validators.required),
   });
 
   ngOnInit(): void {}
+
+  onSubmit(): void {
+    console.log(this.splashForm.value);
+  }
 }
