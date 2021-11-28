@@ -2,19 +2,26 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap, catchError, of } from 'rxjs';
 import { Splash } from '../models/splash';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SplashService {
-  private URL = 'api/splashes';
+  private URL = 'api';
 
   constructor(private http: HttpClient) {}
 
   getSplashes(): Observable<Splash[]> {
     return this.http
-      .get<Splash[]>(this.URL)
+      .get<Splash[]>(this.URL + '/splashes')
       .pipe(catchError(this.handleError<Splash[]>('getSplashes', [])));
+  }
+
+  getFollowers(): Observable<User[]> {
+    return this.http
+      .get<User[]>(this.URL + '/followers')
+      .pipe(catchError(this.handleError<User[]>('getFollowers', [])));
   }
 
   createSplash() {}

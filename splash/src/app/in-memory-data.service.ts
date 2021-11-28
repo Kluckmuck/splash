@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { data, followersData } from './data';
 
 import { Splash } from './models/splash';
 
@@ -8,19 +9,9 @@ import { Splash } from './models/splash';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const splashes = [
-      { id: 11, body: 'this is a test body', title: 'Dr Nice' },
-      { id: 12, body: 'this is a test body', title: 'Narco' },
-      { id: 13, body: 'this is a test body', title: 'Bombasto' },
-      { id: 14, body: 'this is a test body', title: 'Celeritas' },
-      { id: 15, body: 'this is a test body', title: 'Magneta' },
-      { id: 16, body: 'this is a test body', title: 'RubberMan' },
-      { id: 17, body: 'this is a test body', title: 'Dynama' },
-      { id: 18, body: 'this is a test body', title: 'Dr IQ' },
-      { id: 19, body: 'this is a test body', title: 'Magma' },
-      { id: 20, body: 'this is a test body', title: 'Tornado' },
-    ];
-    return { splashes };
+    const splashes = data;
+    const followers = followersData;
+    return { splashes, followers };
   }
 
   // Overrides the genId method to ensure that a hero always has an id.

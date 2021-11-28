@@ -1,0 +1,8 @@
+<h1>You are following:</h1>
+<div *ngIf="followers">
+  <mat-list role="list">
+    <div *ngFor="let user of followers">
+      <mat-list-item role="listitem">{{ user.author }}</mat-list-item>
+    </div>
+  </mat-list>
+</div>

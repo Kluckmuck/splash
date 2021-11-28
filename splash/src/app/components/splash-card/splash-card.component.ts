@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Splash } from '../../models/splash';
 
 @Component({
@@ -6,12 +7,29 @@ import { Splash } from '../../models/splash';
   templateUrl: './splash-card.component.html',
   styleUrls: ['./splash-card.component.css'],
 })
-export class SplashCardComponent implements OnInit {
+export class SplashCardComponent {
   @Input() item: Splash | undefined;
 
-  constructor() {}
+  durationInSeconds = 5;
 
-  ngOnInit(): void {
-    console.log(this.item);
+  constructor(private _snackBar: MatSnackBar) {}
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(SnackComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
   }
 }
+
+@Component({
+  selector: 'snack-bar-component-example-snack',
+  templateUrl: 'snack-component.html',
+  styles: [
+    `
+      .example-pizza-party {
+        color: hotpink;
+      }
+    `,
+  ],
+})
+export class SnackComponent {}

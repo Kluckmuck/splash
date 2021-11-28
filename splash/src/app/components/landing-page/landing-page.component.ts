@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Splash } from '../../models/splash';
+import { User } from '../../models/user';
 import { SplashService } from '../../services/splash.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class LandingPageComponent implements OnInit {
   constructor(private splashService: SplashService) {}
 
   splashes: Splash[] = [];
+  followers: User[] = [];
 
   ngOnInit(): void {
     this.getSplashes();
@@ -19,7 +21,12 @@ export class LandingPageComponent implements OnInit {
   getSplashes(): void {
     this.splashService.getSplashes().subscribe((splashes) => {
       this.splashes = splashes;
-      console.log(this.splashes);
+    });
+  }
+
+  getFollowers(): void {
+    this.splashService.getFollowers().subscribe((followers) => {
+      this.followers = followers;
     });
   }
 }

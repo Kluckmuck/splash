@@ -3,5 +3,5 @@ export interface Splash {
   title: string;
   body: string;
   created: Date;
-  creator: number;
+  author: number;
 }

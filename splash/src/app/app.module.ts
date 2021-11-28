@@ -15,6 +15,9 @@ import { SplashFormComponent } from './components/splash-form/splash-form.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { FollowersListComponent } from './components/followers-list/followers-list.component';
+import { MatListModule } from '@angular/material/list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
     LandingPageComponent,
     SplashCardComponent,
     SplashFormComponent,
+    FollowersListComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,8 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatListModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     HttpClientModule,
 
