@@ -11,11 +11,15 @@ export class FollowersListComponent implements OnInit {
   constructor(private splashService: SplashService) {}
 
   followers: User[] = [];
+  show: boolean = false;
 
   ngOnInit(): void {
     this.splashService.getFollowers().subscribe((users) => {
       this.followers = users;
-      console.log(this.followers);
     });
+  }
+
+  onClickShowButton(): void {
+    this.show = !this.show;
   }
 }

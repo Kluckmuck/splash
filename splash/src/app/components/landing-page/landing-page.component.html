@@ -1,8 +1,8 @@
 <app-splash-form></app-splash-form>
 <app-followers-list></app-followers-list>
 <h1>New splashes:</h1>
-<div *ngIf="splashes">
-  <div *ngFor="let splash of splashes">
+<div *ngIf="sorted">
+  <div *ngFor="let splash of sorted">
     <app-splash-card [item]="splash"></app-splash-card>
   </div>
 </div>
